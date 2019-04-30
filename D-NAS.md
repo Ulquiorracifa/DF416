@@ -4,7 +4,7 @@
 
 
 
-![1556603389718](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556603389718.png)
+![proxylessNAS框架](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556603389718.png)
 
 不使用proxy	直接从框架中学习，移除重复块；新的基于梯度方法；
 
@@ -16,13 +16,13 @@
 
   预构建一个N (e; · · · ; en)  :网络类型，O = {oi}:操作类型，mO(x)  为 混合操作的输出（N条路径）
 
-  ![1556604619415](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556604619415.png) 如下图：
+  ![NAS路径定义](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556604619415.png) 如下图：
 
-  ##### ![1556604668117](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556604668117.png)
+  ##### ![网络结构多路径（学习框架参数）](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556604668117.png)
 
   ​		通过框架参数（Architecture Parameters）学习每个位置合适的操作，通过二值开关来选择操作类型。αi为框架参数 
 
-  ![1556605017836](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556605017836.png)
+  ![1556605017836](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556605017836.png)
 
   
 
@@ -30,7 +30,7 @@
 
   当然不能并行的训练所有候选操作。通过二值化框架参数，只激活一条路径。训练过程中，使用**BinaryConnect**。依靠BinaryGate 的梯度来更新框架参数。
 
-  ![1556605414974](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556605414974.png)
+  ![binaryConnect](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556605414974.png)
 
 
 
@@ -38,7 +38,7 @@
 
   ###### 网络的延时模拟成关于网络规模的连续函数
 
-  ![1556608125813](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556608125813.png)
+  ![优化时延计算及其loss定义（权衡accuracy和耗时）](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556608125813.png)
 
   
 
@@ -49,19 +49,19 @@
   Williams1992_Article_SimpleStatisticalGradient-Following Algorithms for
   Connectionist Reinforcement Learning
 
-  ![1556610065331](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556610065331.png)
+  ![增强学习框架参数](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556610065331.png)
 
 - #### 实验结果
 
 
 
-![1556610520795](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556610520795.png)
+![搜索生成网络--实验结果](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556610520795.png)
 
 
 
 得到的各个平台的网络框架
 
-![1556610626007](C:\Users\fourt\AppData\Roaming\Typora\typora-user-images\1556610626007.png)
+![gpu-cpu-mobile框架搜索的网络](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1556610626007.png)
 
 
 

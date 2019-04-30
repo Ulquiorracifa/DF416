@@ -8,7 +8,7 @@
 
 
 
-![è®¡ç®æºè§è§ä""å¡](https://img-blog.csdn.net/20180130220548650?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb2h1MjAyMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![视觉任务](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/yolovNote_0.png)
 
 
 
@@ -22,13 +22,13 @@
 
 #### YOLO
 
-![è¿éåå¾çæè¿°](https://img-blog.csdn.net/20160317163739691)
+![box分割](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/yolovNote_1.jpg)
 
 
 
 yolo：通过每个 bounding box预测以中心落在这个box内的物体的dx dy dw dh以及confidence（或者无物体中心  ，此时Pr（Object）取0， 存在则取1）
 
-​				![img](https://img-blog.csdn.net/20160317154752063)
+​				![置信度](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/yolovNote_2.jpg)
 
 同时要预测每个网格的类别（由类别数C位组成）
 
@@ -36,7 +36,7 @@ yolo：通过每个 bounding box预测以中心落在这个box内的物体的dx 
 
 借鉴Googlenet，24个卷积层，2个全链接层
 
-![img](https://img-blog.csdn.net/20160317155955917)
+![yolov1网络结构](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/yolovNote_3.jpg)
 
 
 
@@ -58,5 +58,5 @@ yolo：通过每个 bounding box预测以中心落在这个box内的物体的dx 
 
 
 
-![è¿éåå¾çæè¿°](https://img-blog.csdn.net/20160317163417800)
+![yolov-LOSS](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/yolovNote_4.jpg)
 
