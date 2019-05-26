@@ -85,7 +85,7 @@ resize固定倍率->怎么放入input
 
 
 
-###### ![pascal数据集的FCN网络结构](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160508234037674?raw=true)
+###### ![pascal数据集的FCN网络结构](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160508234037674.png?raw=true)
 
 ​	 虚线下的内容：从不同阶段的的几个预测层中联合预测定位每个像素点的分类结果。（上采样存在裁剪）最后的卷基层输出转化为对每个类别的可能性。然后从这类别数张预测图中找argmax，就是该位置的最大类别可能性。
 
@@ -93,7 +93,7 @@ resize固定倍率->怎么放入input
 
 ##### 上采样过程：
 
-![反卷积-上采样过程](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160510150910165?raw=true)
+![反卷积-上采样过程](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160510150910165.png?raw=true)
 
 stride表示步长。
 
