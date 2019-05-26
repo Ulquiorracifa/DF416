@@ -41,13 +41,13 @@ typora-root-url: pic
 
 ###### 从热图到(x,y)坐标转换的方式：
 
-![1558704831859](/../pic/1558704831859.png)
+![1558704831859](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1558704831859.png?raw=true)
 
 
 
 其中，X，Y的分布由：
 
-![1558705065285](/../pic/1558705065285.png)
+![1558705065285](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1555936928375.png?raw=true)
 
 ![1558705076923](/../pic/1558705076923.png)
 
@@ -57,7 +57,7 @@ typora-root-url: pic
 
 #### loss function
 
-![1558705426334](/../pic/1558705426334.png)
+![1558705426334](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1558705426334.png?raw=true)
 
 而后可以加入正则项帮助并行监督热图回归。（方差正则、KL散度，Jensen-Shannon）
 
@@ -85,7 +85,7 @@ resize固定倍率->怎么放入input
 
 
 
-###### ![pascal数据集的FCN网络结构](/../pic/20160508234037674)
+###### ![pascal数据集的FCN网络结构](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160508234037674?raw=true)
 
 ​	 虚线下的内容：从不同阶段的的几个预测层中联合预测定位每个像素点的分类结果。（上采样存在裁剪）最后的卷基层输出转化为对每个类别的可能性。然后从这类别数张预测图中找argmax，就是该位置的最大类别可能性。
 
@@ -93,7 +93,7 @@ resize固定倍率->怎么放入input
 
 ##### 上采样过程：
 
-![反卷积-上采样过程](/../pic/20160510150910165)
+![反卷积-上采样过程](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160510150910165?raw=true)
 
 stride表示步长。
 
@@ -101,7 +101,7 @@ stride表示步长。
 
 ###### 在训练过程中，从最后一层输出开始，一步步融入上一个pooling的预测结果来训练上采样提取细节。
 
-![FCN不同倍上采样分析结果](/../pic/20160511111507947)
+![FCN不同倍上采样分析结果](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160511111507947.png?raw=true)
 
 
 
