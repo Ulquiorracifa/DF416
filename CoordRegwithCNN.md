@@ -49,7 +49,7 @@ typora-root-url: pic
 
 ![1558705065285](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1555936928375.png?raw=true)
 
-![1558705076923](/../pic/1558705076923.png)
+![1558705076923](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1558705076923.png?raw=true)
 
 得到。其实就是期望均值到分布位置。
 
