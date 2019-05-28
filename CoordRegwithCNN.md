@@ -112,7 +112,57 @@ stride表示步长。
 1. FCN-8s仍然不够精细（有待提升）
 2. 空间之间的相互分布关系（大步长每个点阵之间的关系较小，点阵内的预测通过上采样分布倒是一致 ）
 
+#### 
 
 
 
+#### Faster RCNN
+
+##### ROI pooling:
+
+​	大量的固定bouding boxs特征图使得检测困难。
+
+
+
+ROI pooling具体操作如下：
+
+（1）根据输入image，将ROI映射到feature map对应位置；
+
+（2）将映射后的区域划分为相同大小的sections（sections数量与输出的维度相同）；
+
+（3）对每个sections进行max pooling操作；
+
+这样我们就可以从不同大小的方框得到固定大小的相应 的feature maps。值得一提的是，输出的feature maps的大小不取决于ROI和卷积feature maps大小。ROI pooling 最大的好处就在于极大地提高了处理速度
+
+
+
+#### RetinaNet：
+
+![RetinaNet_Struct](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20180422141556616.png?raw=true)
+
+
+
+
+
+
+
+##### RoI Align（Mask R-CNN）:
+
+##### ROI Pooling局限性：
+
+1.将候选框边界量化为整数点坐标值。2.将量化后的边界区域平均分割成 k x k 个单元(bin),对每一个单元的边界进行量化
+
+预选框位置由模型回归得到，为浮点坐标，但中间的ROI pooling存在两次量化误差。称为“不匹配问题”。**misalignment**
+
+[（例如目标大小665，图片大小800）由步长截取的物体已存 在由整数坐标（665/stride(32)）化为小数（20.78），而框选区域化整了小数坐标（20）；框内特征（20）池化一定大小（7*7），将输入的目标图（20/7）量化到整数（2）]
+
+##### ROI Align 思想：
+
+取消量化操作，使用双线性内插的方法获得坐标为浮点数的像素点上的图像数值,从而将整个特征聚集过程转化为一个连续的操作。
+
+- 遍历每一个候选区域，保持浮点数边界不做量化。
+- 将候选区域分割成k x k个单元，每个单元的边界也不做量化。
+- 在每个单元中计算固定四个坐标位置，用双线性内插的方法计算出这四个位置的值，然后进行最大池化操作。
+
+![RoIAlign-featureMap](https://github.com/Ulquiorracifa/DF416/blob/master/pic/5a168b96ab6441421e0026bd.png?raw=true)
 
