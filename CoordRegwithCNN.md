@@ -41,15 +41,15 @@ typora-root-url: pic
 
 ###### 从热图到(x,y)坐标转换的方式：
 
-![1558704831859](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1558704831859.png?raw=true)
+![1558704831859](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1558704831859.png)
 
 
 
 其中，X，Y的分布由：
 
-![1558705065285](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1555936928375.png?raw=true)
+![1558705065285](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1555936928375.png)
 
-![1558705076923](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1558705076923.png?raw=true)
+![1558705076923](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1558705076923.png)
 
 得到。其实就是期望均值到分布位置。
 
@@ -57,7 +57,7 @@ typora-root-url: pic
 
 #### loss function
 
-![1558705426334](https://github.com/Ulquiorracifa/DF416/blob/master/pic/1558705426334.png?raw=true)
+![1558705426334](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/1558705426334.png)
 
 而后可以加入正则项帮助并行监督热图回归。（方差正则、KL散度，Jensen-Shannon）
 
@@ -85,7 +85,7 @@ resize固定倍率->怎么放入input
 
 
 
-###### ![pascal数据集的FCN网络结构](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160508234037674.png?raw=true)
+###### ![pascal数据集的FCN网络结构](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/20160508234037674.png)
 
 ​	 虚线下的内容：从不同阶段的的几个预测层中联合预测定位每个像素点的分类结果。（上采样存在裁剪）最后的卷基层输出转化为对每个类别的可能性。然后从这类别数张预测图中找argmax，就是该位置的最大类别可能性。
 
@@ -93,7 +93,7 @@ resize固定倍率->怎么放入input
 
 ##### 上采样过程：
 
-![反卷积-上采样过程](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160510150910165.png?raw=true)
+![反卷积-上采样过程](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/20160510150910165.png)
 
 stride表示步长。
 
@@ -101,7 +101,7 @@ stride表示步长。
 
 ###### 在训练过程中，从最后一层输出开始，一步步融入上一个pooling的预测结果来训练上采样提取细节。
 
-![FCN不同倍上采样分析结果](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20160511111507947.png?raw=true)
+![FCN不同倍上采样分析结果](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/20160511111507947.png)
 
 
 
@@ -138,7 +138,7 @@ ROI pooling具体操作如下：
 
 #### RetinaNet：
 
-![RetinaNet_Struct](https://github.com/Ulquiorracifa/DF416/blob/master/pic/20180422141556616.png?raw=true)
+![RetinaNet_Struct](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/20180422141556616.png)
 
 
 
@@ -164,5 +164,5 @@ ROI pooling具体操作如下：
 - 将候选区域分割成k x k个单元，每个单元的边界也不做量化。
 - 在每个单元中计算固定四个坐标位置，用双线性内插的方法计算出这四个位置的值，然后进行最大池化操作。
 
-![RoIAlign-featureMap](https://github.com/Ulquiorracifa/DF416/blob/master/pic/5a168b96ab6441421e0026bd.png?raw=true)
+![RoIAlign-featureMap](https://raw.githubusercontent.com/Ulquiorracifa/DF416/master/pic/5a168b96ab6441421e0026bd.png)
 
