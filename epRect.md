@@ -102,3 +102,85 @@ idea：
   
 
   ma半径4sigma会取到90%能量
+
+
+
+
+
+### MC-CNN
+
+2015年
+
+##### 训练自KITTI or Middlebury  数据集，使用其GT图
+
+左右图对：n×n大小，中心左（x,y）；中心右（x-d-Oneg,y）;d为对应正确匹对点的差；
+
+Oneg提供一个范围[dataset_neg_low,dataset_neg_high]或[-dataset_neg_high,dataset_neg_low]
+
+正确点位置为（x-d-Opos,y）
+
+
+
+![1561973550062](/1561973550062.png)
+
+
+
+Opos从[-dataset pos; dataset pos ]中取，和立体匹配策略有关，dataset pos<=1（等价亚像素匹配）
+
+
+
+##### 网络骨架
+
+###### fast 框架：
+
+![1561973550062](/1561973550062.png)
+
+hinge loss:
+
+以以相同图像位置为中心的成对图像对为示例，即存在正负样本对
+
+max(0; m + s- - s+) ,S+为正样本，S-为负样本，仅当正样本比负样本高m ，才存在正值，（m set 0.2）
+
+其他超参数（子网络卷积层数量、核尺寸、每层特征图数、输入尺寸）
+
+
+
+###### accurate 框架：（改为0,1分类）
+
+![fast-mc-cnn](/1561975324014.png)
+
+代替了叉乘相似度的匹配，改成了多个全连接层（删去了归一化）
+
+二值交叉熵 loss：二分类，t = 1为匹配对，0为匹配错
+
+t log(s) + (1 - t) log(1 - s) 
+
+实验证明该loss更准确（叉乘不适用交叉熵）
+
+额外超参（全连接层数量、每个全连接单元数）
+
+
+
+匹配代价：
+
+![1561989721100](/1561989721100.png)
+
+网络优点：
+
+1.图像每个位置仅计算一轮图像
+
+2.sub-networks整图计算（不使用小区域框独立匹配）（个人理解）
+
+3.全连接层中可单次前向传播输出，（替换每个fc为1*1全卷积网络）；仍需考虑双目视差d（KITTI max为228，Middlebury max为400）,全连接层（后匹配模块）须迭代d次
+
+
+
+### 立体匹配算法：
+
+
+
+comprises cross-based cost aggregation, semiglobal matching, a left-right
+consistency check, subpixel enhancement, a median, and a bilateral filter 
+
+待定
+
