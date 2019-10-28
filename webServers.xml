@@ -1,0 +1,14 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="99235898-c382-4611-b3db-d0507503718a" name="luoyc" url="http://202.115.103.60">
+        <fileTransfer host="202.115.103.60" port="10023" rootFolder="/home/luoyc/zhulin/msyDic/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="10023" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</application>
